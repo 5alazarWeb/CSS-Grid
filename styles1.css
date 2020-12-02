@@ -1,0 +1,82 @@
+body {
+	background: #e9ecf4;
+	color: #000;
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+		Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol';
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, auto);
+
+	grid-template-areas:
+		'header header header'
+		'contenido contenido sidebar'
+		'widget-1 widget-2 sidebar'
+		'footer footer footer';
+}
+
+.contenedor .cabecera,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor > div,
+.contenedor .pie {
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.tex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contenedor .cabecera,
+.contenedor .pie {
+	background-color: #12203e;
+	color: #fff;
+	grid-column: span 3;
+}
+
+.contenedor .contenido {
+	background-color: #fff;
+	grid-area: contenido;
+}
+
+.contenedor .sidebar {
+	background-color: #faa43d;
+	min-height: 100px;
+	grid-area: sidebar;
+}
+
+.contenedor .widget-1 {
+	grid-area: widget-1;
+}
+
+/*.contenedor .widget-2 {
+	grid-area: widget-2;
+}*/
+
+.contenedor .widget-1,
+.contenedor .widget-2 {
+	background-color: #55a855fd;
+	color: #fff;
+	height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+	.contenedor {
+		grid-template-areas:
+			'header header header'
+			'contenido contenido contenido'
+			'sidebar sidebar sidebar'
+			'widget-1 widget-1 widget-2'
+			'footer footer footer';
+	}
+}

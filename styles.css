@@ -1,0 +1,117 @@
+body {
+	background: #e9ecf4;
+	color: #000;
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+		Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+		Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol';
+	/*margin: 0;*/
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, auto);
+
+	grid-template-areas:
+		'header header header'
+		'contenido contenido sidebar'
+		'widget-1 widget-2 sidebar'
+		'footer footer footer';
+}
+
+.contenedor > div,
+.contenedor .cabecera,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .pie {
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.contenedor .cabecera {
+	background: #12203e;
+	color: #fff;
+	/* grid-column-start: 1;
+	grid-column-end: -1; */
+	grid-area: header;
+}
+
+.contenedor .contenido {
+	/* grid-column: span 2; */
+	background: #fff;
+	grid-area: contenido;
+}
+
+.contenedor .sidebar {
+	/* grid-column: 3 / 4; */
+	background: #faa43d;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* grid-row: span 2; */
+	min-height: 100px;
+	grid-area: sidebar;
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2 {
+	background: #55a855fd;
+	color: #fff;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contenedor .widget-1 {
+	grid-area: widget-1;
+}
+
+.contenedor .widget-2 {
+	grid-area: widget-2;
+}
+
+.contenedor .pie {
+	background: #12203e;
+	color: #fff;
+	/* grid-column: span 3; */
+	text-align: center;
+	grid-area: footer;
+}
+
+@media screen and (max-width: 768px) {
+	.contenedor {
+		/*grid-column: 1 / -1;
+	}
+}
+
+.contenedor .sidebar {
+	grid-column: 1 / -1;
+}
+
+.contenedor .widget-1 {
+	grid-column: span 2;
+} */
+		grid-template-areas:
+			'header header header'
+			'contenido contenido contenido'
+			'sidebar sidebar sidebar'
+			'widget-1 widget-1 widget-2'
+			'footer footer footer';
+	}
+}
